@@ -1,5 +1,5 @@
 package com.maven.model;
-
+ 
 //ENCAPSULATION
 public class Category {
     private String categoryName; // the name of the category
@@ -26,7 +26,7 @@ public class Category {
                 '}';
     }   
     
-   //two category objects are considered the same if tehir category name is the same
+   //two category objects are considered the same if their category name is the same
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -3,10 +3,10 @@ package com.maven.model;
 //PARENT CLASS
 public class Person {
     protected String name;
-    protected String id;
+    protected String accountNumber;
 
-    public Person(String id, String name) {
-        this.id = id;
+    public Person(String accountNumber, String name) {
+        this.accountNumber = accountNumber;
         this.name = name;
     }
 
@@ -14,12 +14,12 @@ public class Person {
         return name;
     }
 
-    public String getId() {
-        return id;
+    public String getAccountNumber() {
+        return accountNumber;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(String accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
     public void setName(String name) {
@@ -29,7 +29,7 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "id='"   + id   + '\'' +
+                "accountNumber='"   + accountNumber   + '\'' +
                 ", name='" + name + '\'' +
                 '}';
     }

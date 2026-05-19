@@ -34,7 +34,6 @@ public class Client {
         Gson gson = new Gson();
         
         //open tcp socket connection to the server on localhost 8080
-
         try (Socket socket = new Socket("localhost", Server.PORT); //try-with-resources to ensure the sockete is closed automatically
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
@@ -81,8 +80,15 @@ public class Client {
                 // Display current inventory
                 displayInventoryScreen(productInventory);
  
-                System.out.print(" >>> Please enter selection number: ");
-                String choice = scanner.nextLine().trim();
+                String choice;
+                while (true) {
+                    System.out.print(" >>> Please enter selection number: ");
+                    choice = scanner.nextLine().trim();
+                    if (choice.equals("1") || choice.equals("2")) {
+                        break;
+                    }
+                    System.out.println(B_RED + "[ERROR]: Invalid selection. Please enter 1 or 2." + RESET);
+                }
  
                 if (choice.equals("2")) {
                     //customer choose to exit
@@ -92,8 +98,8 @@ public class Client {
                 } else if (choice.equals("1")) {
                     //customer choose to buy
                     out.println("BUY"); // tell server client are buying
-
-                    //ask product deatils, product id and quantity
+ 
+                    //ask product details, product id and quantity
                     System.out.print("Enter product ID: ");
                     String id = scanner.nextLine().trim();
                     System.out.print("Enter quantity: ");
@@ -113,8 +119,6 @@ public class Client {
  
                     // Process checkout
                     processCheckout(scanner, in, out); // if item accepted then proceed to checkout menu
-                    System.out.println(B_RED + "[ERROR]: Invalid selection. Please enter 1 or 2." + RESET);
-
                 }
             }
         } catch (IOException e) {
@@ -222,7 +226,7 @@ public class Client {
  
                 case "3": // Return to cart
                     System.out.println(B_YELLOW + "[!] Returning to cart..." + RESET);
-                    out.println("3"); // tel server to stay in checkout
+                    out.println("3"); // tell server to stay in checkout
                     return false;
  
                 default:
@@ -266,8 +270,6 @@ public class Client {
     // Process card payment
     private static boolean processCardAuthAndPayment(Scanner scanner, BufferedReader in, PrintWriter out)
             throws IOException {
-
-        out.println("2"); //tell server card payment is chosen
  
         while (true) {
             displayCardAuthMenu(); // show menu log in, register, back
@@ -276,9 +278,11 @@ public class Client {
  
             switch (authChoice) {
                 case "1": // Log in with existing account
+                    out.println("2"); // tell server card payment is chosen
                     return processCardLogin(scanner, in, out);
-
+ 
                 case "2": // Register a new account
+                    out.println("2"); // tell server card payment is chosen
                     boolean registered = processCardRegister(scanner, in, out);
                     if (registered) {
                         // After registration, proceed to login
@@ -290,6 +294,7 @@ public class Client {
  
                 case "3": // Back to payment menu
                     System.out.println(B_YELLOW + "[!] Returning to payment options..." + RESET);
+                    out.println("3"); // tell server to return to checkout (no card flow entered)
                     return false;
  
                 default:

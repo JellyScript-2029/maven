@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.*;
-
-
+ 
+ 
 // Manages client connections, inventory, and financial data
 public class Server {
  
@@ -21,9 +21,9 @@ public class Server {
     
     // THREAD-SAFE SHARED DATA
     // Use synchronized collections to prevent data corruption from multiple clients
-    public static List<Product> products = Collections.synchronizedList(new ArrayList<>());
-    public static List<BankAccount> bankAccounts = Collections.synchronizedList(new ArrayList<>());
-    public static List<Transaction> transactions = Collections.synchronizedList(new ArrayList<>());
+    public static List<Product> products = new ArrayList<>();
+    public static List<BankAccount> bankAccounts = new ArrayList<>();
+    public static List<Transaction> transactions = new ArrayList<>();
  
     // FINANCIAL TRACKING
     private static final Object financeLock = new Object(); // Lock for financial operations
@@ -107,7 +107,7 @@ public class Server {
  
                 // Create a new thread for each client connection
                 ClientHandler handler = new ClientHandler(clientSocket, clientLabel);
-
+ 
                 // Wrap it in a Thread so it runs independently
                 Thread clientThread = new Thread(handler, clientLabel);
                 clientThread.start();
@@ -214,7 +214,7 @@ public class Server {
         System.out.println("╚══════════════════════════════════════════════════════════╝");
     }
  
-    // RESERVE stock when an item is added to cart (SYNCHRONIZED)
+    // reserve stock when an item is added to cart (SYNCHRONIZED)
     // Immediately deducts stock so other clients see updated quantity in real time
     public static synchronized boolean reserveStock(String productId, int quantity) {
         Product product = findProductById(productId);
@@ -246,7 +246,7 @@ public class Server {
  
     // stock is already reserved when items were added to other clients cart
     public static synchronized boolean processCartCheckout(ShoppingCart<Product> cart) {
-
+ 
         // Stock was already deducted during reserveStock() when items were added to cart    
         FileManager.saveListToJson(PRODUCTS_FILE, products);
         return true;
@@ -304,4 +304,3 @@ public class Server {
         shopBankBalance += amount;
     }
 }
- 

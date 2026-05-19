@@ -17,9 +17,9 @@ public class BankAccount extends Person {
     }
     // GETTERS
     public String getIdNumber() {
-        return id;  
+        return accountNumber;  
     }
-
+    
     public double getBalance() {
         return balance;
     }
@@ -36,14 +36,14 @@ public class BankAccount extends Person {
         this.balance = balance;
     }
  
-    //used for debugging; prints all fields in a readable format
+    //used for debugging, prints all fields in a readable format
     @Override
     public String toString() {
         return "BankAccount{" +
-                "accountNumber='" + id      + '\'' +
-                ", name='"        + name    + '\'' +  
+                "accountNumber='" + accountNumber + '\'' +
+                ", name='"        + name + '\'' +  
                 ", balance="      + balance +
-                ", pin='"         + pin     + '\'' +
+                ", pin='"         + pin + '\'' +
                 '}';
     }
 }

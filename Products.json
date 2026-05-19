@@ -263,7 +263,7 @@
     "name": "Lotion 100ml",
     "category": "Personal Care",
     "price": 75.0,
-    "stockQuantity": 3
+    "stockQuantity": 0
   },
   {
     "id": "PRC009",
@@ -410,7 +410,7 @@
     "name": "Chicharon 50g",
     "category": "Snacks",
     "price": 15.0,
-    "stockQuantity": 46
+    "stockQuantity": 39
   },
   {
     "id": "SNK010",
