@@ -1,0 +1,87 @@
+[
+  {
+    "transactionNumber": 1,
+    "dateOfPurchase": "Sat May 16 20:56:39 PST 2026",
+    "price": 105.0
+  },
+  {
+    "transactionNumber": 2,
+    "dateOfPurchase": "Sat May 16 20:59:17 PST 2026",
+    "price": 119.0
+  },
+  {
+    "transactionNumber": 3,
+    "dateOfPurchase": "2026-05-16T21:12:30.280293",
+    "price": 60.0
+  },
+  {
+    "transactionNumber": 4,
+    "dateOfPurchase": "2026-05-16T21:14:02.647457300",
+    "price": 245.0
+  },
+  {
+    "transactionNumber": 5,
+    "dateOfPurchase": "2026-05-16T21:28:09.838737400",
+    "price": 45.0
+  },
+  {
+    "transactionNumber": 6,
+    "dateOfPurchase": "2026-05-16T23:01:43.168048",
+    "price": 60.0
+  },
+  {
+    "transactionNumber": 7,
+    "dateOfPurchase": "Sun May 17 17:38:58 PST 2026",
+    "price": 60.0
+  },
+  {
+    "transactionNumber": 8,
+    "dateOfPurchase": "Sun May 17 17:41:43 PST 2026",
+    "price": 135.0
+  },
+  {
+    "transactionNumber": 9,
+    "dateOfPurchase": "Sun May 17 17:43:53 PST 2026",
+    "price": 75.0
+  },
+  {
+    "transactionNumber": 10,
+    "dateOfPurchase": "Sun May 17 17:46:19 PST 2026",
+    "price": 250.0
+  },
+  {
+    "transactionNumber": 11,
+    "dateOfPurchase": "Sun May 17 17:52:31 PST 2026",
+    "price": 31.0
+  },
+  {
+    "transactionNumber": 12,
+    "dateOfPurchase": "Mon May 18 07:56:17 PST 2026",
+    "price": 330.0
+  },
+  {
+    "transactionNumber": 13,
+    "dateOfPurchase": "Mon May 18 12:49:13 PST 2026",
+    "price": 1400.0
+  },
+  {
+    "transactionNumber": 14,
+    "dateOfPurchase": "Mon May 18 13:02:27 PST 2026",
+    "price": 75.0
+  },
+  {
+    "transactionNumber": 15,
+    "dateOfPurchase": "Mon May 18 13:17:45 PST 2026",
+    "price": 30.0
+  },
+  {
+    "transactionNumber": 16,
+    "dateOfPurchase": "Mon May 18 13:18:02 PST 2026",
+    "price": 114.0
+  },
+  {
+    "transactionNumber": 17,
+    "dateOfPurchase": "Tue May 19 08:25:27 PST 2026",
+    "price": 105.0
+  }
+]

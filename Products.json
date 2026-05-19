@@ -1,0 +1,422 @@
+[
+  {
+    "id": "BEV001",
+    "name": "Mineral Water 500ml",
+    "category": "Beverages",
+    "price": 25.0,
+    "stockQuantity": 100
+  },
+  {
+    "id": "BEV002",
+    "name": "Cola Soda 1.5L",
+    "category": "Beverages",
+    "price": 65.0,
+    "stockQuantity": 50
+  },
+  {
+    "id": "BEV003",
+    "name": "Orange Juice 1L",
+    "category": "Beverages",
+    "price": 85.0,
+    "stockQuantity": 40
+  },
+  {
+    "id": "BEV004",
+    "name": "Iced Tea 500ml",
+    "category": "Beverages",
+    "price": 35.0,
+    "stockQuantity": 68
+  },
+  {
+    "id": "BEV005",
+    "name": "Energy Drink 250ml",
+    "category": "Beverages",
+    "price": 55.0,
+    "stockQuantity": 60
+  },
+  {
+    "id": "BEV006",
+    "name": "Chocolate Milk 200ml",
+    "category": "Beverages",
+    "price": 30.0,
+    "stockQuantity": 80
+  },
+  {
+    "id": "BEV007",
+    "name": "Green Tea 350ml",
+    "category": "Beverages",
+    "price": 40.0,
+    "stockQuantity": 55
+  },
+  {
+    "id": "BEV008",
+    "name": "Coconut Water 330ml",
+    "category": "Beverages",
+    "price": 45.0,
+    "stockQuantity": 45
+  },
+  {
+    "id": "BEV009",
+    "name": "Lemon Soda 1L",
+    "category": "Beverages",
+    "price": 50.0,
+    "stockQuantity": 3
+  },
+  {
+    "id": "BEV010",
+    "name": "Strawberry Juice 250ml",
+    "category": "Beverages",
+    "price": 28.0,
+    "stockQuantity": 20
+  },
+  {
+    "id": "DRY001",
+    "name": "Instant Noodles",
+    "category": "Dry Goods",
+    "price": 15.0,
+    "stockQuantity": 200
+  },
+  {
+    "id": "DRY002",
+    "name": "Canned Sardines",
+    "category": "Dry Goods",
+    "price": 35.0,
+    "stockQuantity": 80
+  },
+  {
+    "id": "DRY003",
+    "name": "White Rice 1kg",
+    "category": "Dry Goods",
+    "price": 55.0,
+    "stockQuantity": 60
+  },
+  {
+    "id": "DRY004",
+    "name": "Canned Corned Beef",
+    "category": "Dry Goods",
+    "price": 65.0,
+    "stockQuantity": 50
+  },
+  {
+    "id": "DRY005",
+    "name": "All-Purpose Flour 1kg",
+    "category": "Dry Goods",
+    "price": 60.0,
+    "stockQuantity": 40
+  },
+  {
+    "id": "DRY006",
+    "name": "Soy Sauce 250ml",
+    "category": "Dry Goods",
+    "price": 20.0,
+    "stockQuantity": 90
+  },
+  {
+    "id": "DRY007",
+    "name": "Vinegar 250ml",
+    "category": "Dry Goods",
+    "price": 18.0,
+    "stockQuantity": 85
+  },
+  {
+    "id": "DRY008",
+    "name": "Cooking Oil 500ml",
+    "category": "Dry Goods",
+    "price": 75.0,
+    "stockQuantity": 4
+  },
+  {
+    "id": "DRY009",
+    "name": "Tomato Paste 200g",
+    "category": "Dry Goods",
+    "price": 25.0,
+    "stockQuantity": 70
+  },
+  {
+    "id": "DRY010",
+    "name": "Condensed Milk 300ml",
+    "category": "Dry Goods",
+    "price": 45.0,
+    "stockQuantity": 55
+  },
+  {
+    "id": "FRS001",
+    "name": "Eggs (per piece)",
+    "category": "Fresh Produce",
+    "price": 12.0,
+    "stockQuantity": 144
+  },
+  {
+    "id": "FRS002",
+    "name": "Banana (per kilo)",
+    "category": "Fresh Produce",
+    "price": 60.0,
+    "stockQuantity": 28
+  },
+  {
+    "id": "FRS003",
+    "name": "Tomato (per kilo)",
+    "category": "Fresh Produce",
+    "price": 80.0,
+    "stockQuantity": 25
+  },
+  {
+    "id": "FRS004",
+    "name": "Onion (per kilo)",
+    "category": "Fresh Produce",
+    "price": 90.0,
+    "stockQuantity": 20
+  },
+  {
+    "id": "FRS005",
+    "name": "Garlic (per kilo)",
+    "category": "Fresh Produce",
+    "price": 120.0,
+    "stockQuantity": 15
+  },
+  {
+    "id": "FRS006",
+    "name": "Cabbage (per head)",
+    "category": "Fresh Produce",
+    "price": 55.0,
+    "stockQuantity": 18
+  },
+  {
+    "id": "FRS007",
+    "name": "Carrot (per kilo)",
+    "category": "Fresh Produce",
+    "price": 70.0,
+    "stockQuantity": 22
+  },
+  {
+    "id": "FRS008",
+    "name": "Potato (per kilo)",
+    "category": "Fresh Produce",
+    "price": 65.0,
+    "stockQuantity": 5
+  },
+  {
+    "id": "FRS009",
+    "name": "Ampalaya (per kilo)",
+    "category": "Fresh Produce",
+    "price": 50.0,
+    "stockQuantity": 12
+  },
+  {
+    "id": "FRS010",
+    "name": "Mango (per kilo)",
+    "category": "Fresh Produce",
+    "price": 95.0,
+    "stockQuantity": 0
+  },
+  {
+    "id": "PRC001",
+    "name": "Shampoo Sachet",
+    "category": "Personal Care",
+    "price": 8.0,
+    "stockQuantity": 300
+  },
+  {
+    "id": "PRC002",
+    "name": "Bath Soap Bar",
+    "category": "Personal Care",
+    "price": 45.0,
+    "stockQuantity": 75
+  },
+  {
+    "id": "PRC003",
+    "name": "Toothpaste 75g",
+    "category": "Personal Care",
+    "price": 70.0,
+    "stockQuantity": 60
+  },
+  {
+    "id": "PRC004",
+    "name": "Toothbrush",
+    "category": "Personal Care",
+    "price": 35.0,
+    "stockQuantity": 80
+  },
+  {
+    "id": "PRC005",
+    "name": "Conditioner Sachet",
+    "category": "Personal Care",
+    "price": 10.0,
+    "stockQuantity": 250
+  },
+  {
+    "id": "PRC006",
+    "name": "Facial Wash 50ml",
+    "category": "Personal Care",
+    "price": 55.0,
+    "stockQuantity": 45
+  },
+  {
+    "id": "PRC007",
+    "name": "Deodorant Roll-On",
+    "category": "Personal Care",
+    "price": 85.0,
+    "stockQuantity": 40
+  },
+  {
+    "id": "PRC008",
+    "name": "Lotion 100ml",
+    "category": "Personal Care",
+    "price": 75.0,
+    "stockQuantity": 3
+  },
+  {
+    "id": "PRC009",
+    "name": "Cotton Balls (50pcs)",
+    "category": "Personal Care",
+    "price": 25.0,
+    "stockQuantity": 100
+  },
+  {
+    "id": "PRC010",
+    "name": "Sanitary Napkin (8pcs)",
+    "category": "Personal Care",
+    "price": 60.0,
+    "stockQuantity": 54
+  },
+  {
+    "id": "SCH001",
+    "name": "Notebook 40 leaves",
+    "category": "School Supplies",
+    "price": 25.0,
+    "stockQuantity": 47
+  },
+  {
+    "id": "SCH002",
+    "name": "Ballpen Black",
+    "category": "School Supplies",
+    "price": 10.0,
+    "stockQuantity": 146
+  },
+  {
+    "id": "SCH003",
+    "name": "Pencil No.2",
+    "category": "School Supplies",
+    "price": 8.0,
+    "stockQuantity": 116
+  },
+  {
+    "id": "SCH004",
+    "name": "Eraser",
+    "category": "School Supplies",
+    "price": 7.0,
+    "stockQuantity": 98
+  },
+  {
+    "id": "SCH005",
+    "name": "Ruler 30cm",
+    "category": "School Supplies",
+    "price": 15.0,
+    "stockQuantity": 59
+  },
+  {
+    "id": "SCH006",
+    "name": "Scotch Tape",
+    "category": "School Supplies",
+    "price": 20.0,
+    "stockQuantity": 0
+  },
+  {
+    "id": "SCH007",
+    "name": "Scissors",
+    "category": "School Supplies",
+    "price": 35.0,
+    "stockQuantity": 40
+  },
+  {
+    "id": "SCH008",
+    "name": "Folder Long",
+    "category": "School Supplies",
+    "price": 12.0,
+    "stockQuantity": 80
+  },
+  {
+    "id": "SCH009",
+    "name": "Crayon Set 16 colors",
+    "category": "School Supplies",
+    "price": 45.0,
+    "stockQuantity": 30
+  },
+  {
+    "id": "SCH010",
+    "name": "Glue Stick",
+    "category": "School Supplies",
+    "price": 18.0,
+    "stockQuantity": 70
+  },
+  {
+    "id": "SNK001",
+    "name": "Potato Chips 55g",
+    "category": "Snacks",
+    "price": 40.0,
+    "stockQuantity": 38
+  },
+  {
+    "id": "SNK002",
+    "name": "Chocolate Bar",
+    "category": "Snacks",
+    "price": 35.0,
+    "stockQuantity": 48
+  },
+  {
+    "id": "SNK003",
+    "name": "Cheese Crackers 100g",
+    "category": "Snacks",
+    "price": 30.0,
+    "stockQuantity": 54
+  },
+  {
+    "id": "SNK004",
+    "name": "Corn Chips 60g",
+    "category": "Snacks",
+    "price": 25.0,
+    "stockQuantity": 70
+  },
+  {
+    "id": "SNK005",
+    "name": "Gummy Bears 80g",
+    "category": "Snacks",
+    "price": 45.0,
+    "stockQuantity": 36
+  },
+  {
+    "id": "SNK006",
+    "name": "Peanuts 100g",
+    "category": "Snacks",
+    "price": 20.0,
+    "stockQuantity": 82
+  },
+  {
+    "id": "SNK007",
+    "name": "Wafer Sticks 125g",
+    "category": "Snacks",
+    "price": 38.0,
+    "stockQuantity": 0
+  },
+  {
+    "id": "SNK008",
+    "name": "Hard Candy 100g",
+    "category": "Snacks",
+    "price": 22.0,
+    "stockQuantity": 80
+  },
+  {
+    "id": "SNK009",
+    "name": "Chicharon 50g",
+    "category": "Snacks",
+    "price": 15.0,
+    "stockQuantity": 46
+  },
+  {
+    "id": "SNK010",
+    "name": "Marshmallow 100g",
+    "category": "Snacks",
+    "price": 28.0,
+    "stockQuantity": 0
+  }
+]
