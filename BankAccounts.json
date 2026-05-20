@@ -1,44 +1,44 @@
 [
   {
+    "accountNumber": "ACC001",
     "balance": 55525.0,
     "pin": "1111",
-    "name": "Jhelianne Figuerres",
-    "accountNumber": "ACC001"
+    "name": "Jhelianne Figuerres"
   },
   {
+    "accountNumber": "ACC002",
     "balance": 12000.5,
     "pin": "2222",
-    "name": "Janiyah Tan",
-    "accountNumber": "ACC002"
+    "name": "Janiyah Tan"
   },
   {
+    "accountNumber": "ACC003",
     "balance": 1400.0,
     "pin": "3333",
-    "name": "Briana Bustamante",
-    "accountNumber": "ACC003"
+    "name": "Briana Bustamante"
   },
   {
+    "accountNumber": "ACC004",
     "balance": 25000.0,
     "pin": "4444",
-    "name": "Jaydenn Viluan",
-    "accountNumber": "ACC004"
+    "name": "Jaydenn Viluan"
   },
   {
+    "accountNumber": "ACC005",
     "balance": 13100.0,
     "pin": "5555",
-    "name": "Ahron Miranda",
-    "accountNumber": "ACC005"
+    "name": "Ahron Miranda"
   },
   {
+    "accountNumber": "ACC006",
     "balance": 3865.0,
     "pin": "6666",
-    "name": "Liam Arias",
-    "accountNumber": "ACC006"
+    "name": "Liam Arias"
   },
   {
+    "accountNumber": "ACC007",
     "balance": 9970.0,
     "pin": "7777",
-    "name": "Justine Galang",
-    "accountNumber": "ACC007"
+    "name": "Justine Galang"
   }
 ]

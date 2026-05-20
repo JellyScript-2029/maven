@@ -122,8 +122,7 @@ public class ClientHandler implements Runnable { // RUNNABLE so that it can be r
             return;
         }
  
-        // Server.reserveStock() deducts stock immediately, this always reflects
-        // real-time quantities
+        // Server.reserveStock() deducts stock immediately, this always reflects real-time quantities
         // Other clients will only see the reduced quantity on their next refresh
         boolean reserved = Server.reserveStock(productId, quantity);
         if (!reserved) {

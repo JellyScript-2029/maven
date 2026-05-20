@@ -15,7 +15,7 @@ public class BankAccount extends Person {
         this.balance = balance;
         this.pin     = pin;
     }
-    // GETTERS
+    // GETTER
     public String getIdNumber() {
         return accountNumber;  
     }

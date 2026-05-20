@@ -18,7 +18,7 @@
     "name": "Orange Juice 1L",
     "category": "Beverages",
     "price": 85.0,
-    "stockQuantity": 40
+    "stockQuantity": 36
   },
   {
     "id": "BEV004",
@@ -410,7 +410,7 @@
     "name": "Chicharon 50g",
     "category": "Snacks",
     "price": 15.0,
-    "stockQuantity": 39
+    "stockQuantity": 32
   },
   {
     "id": "SNK010",
