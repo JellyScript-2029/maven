@@ -16,7 +16,7 @@ import com.maven.model.Player;
 
 public class Enterprise {
 
-    //COLORS
+    // COLORS
     public static final String RESET = "\u001B[0m";
     public static final String BLACK = "\u001B[30m";
     public static final String RED = "\u001B[31m";
@@ -44,80 +44,80 @@ public class Enterprise {
     public static int score = 0;
     public static int qCount = 1;
     public static int currentIndex = -1;
-    public static final String playersFile = "C:\\Users\\figue\\OneDrive\\Documents\\MAisVEN\\maven\\src\\data\\Players.json";
+    public static final String playersFile = "Players.json";
 
     public static String[] questions = {
-        "Sino ang pambansang bayani ng Pilipinas?",
-        "Ano ang kabisera ng Pilipinas?",
-        "Ano ang pambansang ibon ng Pilipinas?",
-        "Ilang kulay ang makikita sa watawat ng Pilipinas (hindi kasama ang puti)?",
-        "Ano ang pambansang prutas ng Pilipinas?",
-        "Sino ang kasalukuyang Pangulo ng Pilipinas?",
-        "Ano ang pambansang bahay ng Pilipinas?",
-        "Anong prutas ang tinaguriang King of Fruits at kilala sa amoy nito sa Davao?",
-        "Ano ang pambansang bulaklak ng Pilipinas?",
-        "Ito ang pinakamaliit na isda sa buong mundo na matatagpuan sa Pilipinas.",
-        "Sino ang Ama ng Wikang Pambansa?",
-        "Ano ang tawag sa pera ng Pilipinas?",
-        "Anong tanyag na bulkang may perfect cone ang matatagpuan sa Albay?",
-        "Ano ang pambansang laro ng Pilipinas?",
-        "Ilang bituin ang mayroon sa watawat ng Pilipinas?",
-        "Ano ang pinakamataas na bundok sa Pilipinas?",
-        "Anong transportasyon ang tinaguriang King of the Road sa Pilipinas?",
-        "Sino ang Ina ng Katipunan?",
-        "Anong lungsod ang kilala bilang Summer Capital of the Philippines?",
-        "Ano ang pambansang sapatos o tsinelas ng mga Pilipino noong unang panahon?",
-        "Ano ang pamagat ng pambansang awit ng Pilipinas?",
-        "Saan matatagpuan ang tanyag na Chocolate Hills?",
-        "Sino ang namuno sa unang pag-ikot sa mundo at namatay sa labanan sa Mactan?",
-        "Ano ang pambansang hayop ng Pilipinas?",
-        "Ilang isla ang bumubuo sa Pilipinas?",
-        "Ano ang tawag sa mga Pilipinong nagtatrabaho sa ibang bansa?",
-        "Anong pagkain ang sikat na gawa sa balat ng baboy na pinirito hanggang lumutong?",
-        "Sino ang pambansang kamao ng Pilipinas pagdating sa boxing?",
-        "Anong relihiyon ang may pinakamalaking bilang ng tagasunod sa Pilipinas?",
-        "Ano ang tawag sa tradisyunal na kasuotan ng mga lalaking Pilipino?"
+            "Sino ang pambansang bayani ng Pilipinas?",
+            "Ano ang kabisera ng Pilipinas?",
+            "Ano ang pambansang ibon ng Pilipinas?",
+            "Ilang kulay ang makikita sa watawat ng Pilipinas (hindi kasama ang puti)?",
+            "Ano ang pambansang prutas ng Pilipinas?",
+            "Sino ang kasalukuyang Pangulo ng Pilipinas?",
+            "Ano ang pambansang bahay ng Pilipinas?",
+            "Anong prutas ang tinaguriang King of Fruits at kilala sa amoy nito sa Davao?",
+            "Ano ang pambansang bulaklak ng Pilipinas?",
+            "Ito ang pinakamaliit na isda sa buong mundo na matatagpuan sa Pilipinas.",
+            "Sino ang Ama ng Wikang Pambansa?",
+            "Ano ang tawag sa pera ng Pilipinas?",
+            "Anong tanyag na bulkang may perfect cone ang matatagpuan sa Albay?",
+            "Ano ang pambansang laro ng Pilipinas?",
+            "Ilang bituin ang mayroon sa watawat ng Pilipinas?",
+            "Ano ang pinakamataas na bundok sa Pilipinas?",
+            "Anong transportasyon ang tinaguriang King of the Road sa Pilipinas?",
+            "Sino ang Ina ng Katipunan?",
+            "Anong lungsod ang kilala bilang Summer Capital of the Philippines?",
+            "Ano ang pambansang sapatos o tsinelas ng mga Pilipino noong unang panahon?",
+            "Ano ang pamagat ng pambansang awit ng Pilipinas?",
+            "Saan matatagpuan ang tanyag na Chocolate Hills?",
+            "Sino ang namuno sa unang pag-ikot sa mundo at namatay sa labanan sa Mactan?",
+            "Ano ang pambansang hayop ng Pilipinas?",
+            "Ilang isla ang bumubuo sa Pilipinas?",
+            "Ano ang tawag sa mga Pilipinong nagtatrabaho sa ibang bansa?",
+            "Anong pagkain ang sikat na gawa sa balat ng baboy na pinirito hanggang lumutong?",
+            "Sino ang pambansang kamao ng Pilipinas pagdating sa boxing?",
+            "Anong relihiyon ang may pinakamalaking bilang ng tagasunod sa Pilipinas?",
+            "Ano ang tawag sa tradisyunal na kasuotan ng mga lalaking Pilipino?"
     };
 
     public static String[][] choices = {
-        {"Dr. Jose Rizal", "Emilio Aguinaldo", "Lapu-Lapu", "Andres Bonifacio"},
-        {"Maynila", "Cebu", "Davao", "Quezon City"},
-        {"Maya", "Kalapati", "Agila ng Pilipinas", "Papagayo"},
-        {"Dalawa", "Tatlo", "Apat", "Lima"},
-        {"Mangga", "Saging", "Papaya", "Lansones"},
-        {"Rodrigo Duterte", "Ferdinand Marcos Jr.", "Leni Robredo", "Bongbong Marcos"},
-        {"Bahay Kubo", "Bahay na Bato", "Kubo", "Nipa Hut"},
-        {"Mangosteen", "Durian", "Rambutan", "Lanzones"},
-        {"Rosas", "Waling-Waling", "Sampaguita", "Ilang-Ilang"},
-        {"Bangus", "Pandaca Pygmaea / Tabios", "Tilapia", "Dilis"},
-        {"Manuel L. Quezon", "Jose Rizal", "Andres Bonifacio", "Emilio Aguinaldo"},
-        {"Dollar", "Peso", "Piso", "Centavo"},
-        {"Bulkang Mayon", "Bulkang Taal", "Bulkang Pinatubo", "Bulkang Bulusan"},
-        {"Sipa", "Palo Sebo", "Arnis", "Patintero"},
-        {"Apat", "Isa", "Dalawa", "Tatlo"},
-        {"Bundok Apo", "Bundok Pulag", "Bundok Halcon", "Bundok Kanlaon"},
-        {"Jeepney", "Tricycle", "Bus", "Kalesa"},
-        {"Gabriela Silang", "Melchora Aquino", "Teresa Magbanua", "Tandang Sora"},
-        {"Tagaytay", "Vigan", "Baguio City", "Batangas"},
-        {"Tsinelas", "Sapatilya", "Alpombra", "Bakya"},
-        {"Bayan Ko", "Pilipinas Kong Mahal", "Lupang Hinirang", "Sariling Atin"},
-        {"Bohol", "Cebu", "Palawan", "Batanes"},
-        {"Juan Sebastian Elcano", "Lapu-Lapu", "Ferdinand Magellan", "Andres Bonifacio"},
-        {"Tamaraw", "Kalabaw", "Carabao", "Pawikan"},
-        {"7,107", "7,000", "8,000", "7,641"},
-        {"OFW", "Migrant Worker", "Seaman", "TNT"},
-        {"Lechon", "Sisig", "Crispy Pata", "Chicharon"},
-        {"Manny Pacquiao", "Nonito Donaire", "Mark Magsayo", "Gerry Penalosa"},
-        {"Islam", "Protestantismo", "Katoliko", "Budismo"},
-        {"Polo Barong", "Camisa de Chino", "Baro't Saya", "Barong Tagalog"}
+            { "Dr. Jose Rizal", "Emilio Aguinaldo", "Lapu-Lapu", "Andres Bonifacio" },
+            { "Maynila", "Cebu", "Davao", "Quezon City" },
+            { "Maya", "Kalapati", "Agila ng Pilipinas", "Papagayo" },
+            { "Dalawa", "Tatlo", "Apat", "Lima" },
+            { "Mangga", "Saging", "Papaya", "Lansones" },
+            { "Rodrigo Duterte", "Ferdinand Marcos Jr.", "Leni Robredo", "Bongbong Marcos" },
+            { "Bahay Kubo", "Bahay na Bato", "Kubo", "Nipa Hut" },
+            { "Mangosteen", "Durian", "Rambutan", "Lanzones" },
+            { "Rosas", "Waling-Waling", "Sampaguita", "Ilang-Ilang" },
+            { "Bangus", "Pandaca Pygmaea / Tabios", "Tilapia", "Dilis" },
+            { "Manuel L. Quezon", "Jose Rizal", "Andres Bonifacio", "Emilio Aguinaldo" },
+            { "Dollar", "Peso", "Piso", "Centavo" },
+            { "Bulkang Mayon", "Bulkang Taal", "Bulkang Pinatubo", "Bulkang Bulusan" },
+            { "Sipa", "Palo Sebo", "Arnis", "Patintero" },
+            { "Apat", "Isa", "Dalawa", "Tatlo" },
+            { "Bundok Apo", "Bundok Pulag", "Bundok Halcon", "Bundok Kanlaon" },
+            { "Jeepney", "Tricycle", "Bus", "Kalesa" },
+            { "Gabriela Silang", "Melchora Aquino", "Teresa Magbanua", "Tandang Sora" },
+            { "Tagaytay", "Vigan", "Baguio City", "Batangas" },
+            { "Tsinelas", "Sapatilya", "Alpombra", "Bakya" },
+            { "Bayan Ko", "Pilipinas Kong Mahal", "Lupang Hinirang", "Sariling Atin" },
+            { "Bohol", "Cebu", "Palawan", "Batanes" },
+            { "Juan Sebastian Elcano", "Lapu-Lapu", "Ferdinand Magellan", "Andres Bonifacio" },
+            { "Tamaraw", "Kalabaw", "Carabao", "Pawikan" },
+            { "7,107", "7,000", "8,000", "7,641" },
+            { "OFW", "Migrant Worker", "Seaman", "TNT" },
+            { "Lechon", "Sisig", "Crispy Pata", "Chicharon" },
+            { "Manny Pacquiao", "Nonito Donaire", "Mark Magsayo", "Gerry Penalosa" },
+            { "Islam", "Protestantismo", "Katoliko", "Budismo" },
+            { "Polo Barong", "Camisa de Chino", "Baro't Saya", "Barong Tagalog" }
     };
 
     public static String[] answer = {
-        "Dr. Jose Rizal", "Maynila", "Agila ng Pilipinas", "Tatlo ", "Mangga",
-        "Ferdinand Marcos Jr.", "Bahay Kubo", "Durian", "Sampaguita", "Pandaca Pygmaea / Tabios",
-        "Manuel L. Quezon", "Piso", "Bulkang Mayon", "Arnis", "Tatlo", "Bundok Apo", "Jeepney",
-        "Melchora Aquino", "Baguio City", "Bakya", "Lupang Hinirang", "Bohol", "Ferdinand Magellan", "Kalabaw",
-        "7,641", "OFW", "Chicharon", "Manny Pacquiao", "Katoliko", "Barong Tagalog"
+            "Dr. Jose Rizal", "Maynila", "Agila ng Pilipinas", "Tatlo", "Mangga",
+            "Ferdinand Marcos Jr.", "Bahay Kubo", "Durian", "Sampaguita", "Pandaca Pygmaea / Tabios",
+            "Manuel L. Quezon", "Piso", "Bulkang Mayon", "Arnis", "Tatlo", "Bundok Apo", "Jeepney",
+            "Melchora Aquino", "Baguio City", "Bakya", "Lupang Hinirang", "Bohol", "Ferdinand Magellan", "Kalabaw",
+            "7,641", "OFW", "Chicharon", "Manny Pacquiao", "Katoliko", "Barong Tagalog"
     };
 
     public static void main(String[] args) throws InterruptedException {
@@ -136,17 +136,17 @@ public class Enterprise {
 
     public static void mainMenu() throws InterruptedException {
         System.out.println(BOLD_CYAN + """
-====================================================================
-                        W E L C O M E  TO
-                        JF  CORE  SYSTEMS     
-              "The heart of your digital operations"
-              
-                 [1] Core-Mart Inventory & POS
-                 [2] Core-Flix Rental & Booking
-                 [3] Core-Style Clothing Line
-                 [4] Core-Quizzer Trivia Game
-                 [0] Exit
-====================================================================""" + RESET);
+                ====================================================================
+                                        W E L C O M E  TO
+                                        JF  CORE  SYSTEMS
+                              "The heart of your digital operations"
+
+                                 [1] Core-Mart Inventory & POS
+                                 [2] Core-Flix Rental & Booking
+                                 [3] Core-Style Clothing Line
+                                 [4] Core-Quizzer Trivia Game
+                                 [0] Exit
+                ====================================================================""" + RESET);
         System.out.print(BOLD_WHITE + "Enter choice: " + RESET);
         int choice = input.nextInt();
         input.nextLine();
@@ -176,12 +176,12 @@ public class Enterprise {
             }
             case 0 ->
                 System.out.println(BOLD_CYAN + """
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                 │
-│              THANK YOU FOR USING JF  CORE  SYSTEMS              │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘                            
-            """ + RESET);
+                        ┌─────────────────────────────────────────────────────────────────┐
+                        │                                                                 │
+                        │              THANK YOU FOR USING JF  CORE  SYSTEMS              │
+                        │                                                                 │
+                        └─────────────────────────────────────────────────────────────────┘
+                                    """ + RESET);
             default -> {
                 System.out.println(RED + "Invalid input" + RESET);
                 mainMenu();
@@ -198,11 +198,11 @@ public class Enterprise {
         do {
             dBill = 0;
             System.out.println(BOLD_CYAN + """
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                 │
-│             Welcome to Core-Mart Inventory & POS                │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘""" + RESET);
+                    ┌─────────────────────────────────────────────────────────────────┐
+                    │                                                                 │
+                    │             Welcome to Core-Mart Inventory & POS                │
+                    │                                                                 │
+                    └─────────────────────────────────────────────────────────────────┘""" + RESET);
             do {
                 System.out.print("Product name:     ");
                 strProdName = input.nextLine();
@@ -230,9 +230,11 @@ public class Enterprise {
                 if (dPay >= dBill) {
                     dChange = dPay - dBill;
                     System.out.println("Change:           " + dChange);
-                    System.out.println(BOLD_GREEN + "====================================================================" + RESET);
+                    System.out.println(BOLD_GREEN
+                            + "====================================================================" + RESET);
                     System.out.println(BOLD_WHITE + "                   Thank you for shopping! Goodbye. " + RESET);
-                    System.out.println(BOLD_GREEN + "====================================================================" + RESET);
+                    System.out.println(BOLD_GREEN
+                            + "====================================================================" + RESET);
                     break;
                 } else {
                     System.out.println(BOLD_RED + "Money is not enough!" + RESET);
@@ -241,7 +243,7 @@ public class Enterprise {
 
             System.out.print(BOLD_GREEN + "Another customer Y/N? " + RESET);
             String strCustomer = input.nextLine();
-            cCustomer = strCustomer.charAt(0);
+            cCustomer = strCustomer.isEmpty() ? 'n' : strCustomer.charAt(0);
         } while (Character.toLowerCase(cCustomer) == 'y');
 
         System.out.println(BOLD_GREEN + "Grocery program is terminating..." + RESET);
@@ -257,19 +259,19 @@ public class Enterprise {
 
         do {
             System.out.println(BOLD_CYAN + """
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                 │
-│              Welcome to Core-Flix Rental & Booking              │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘""" + RESET);
+                    ┌─────────────────────────────────────────────────────────────────┐
+                    │                                                                 │
+                    │              Welcome to Core-Flix Rental & Booking              │
+                    │                                                                 │
+                    └─────────────────────────────────────────────────────────────────┘""" + RESET);
             System.out.println(PURPLE + "\n================== R E G I S T R A T I O N  H U B =================");
-            System.out.println("""                              
-                                                            T Y P E    
-                                    Please Choose:        
-                                            [1] DVD     
-                                            [2] VCD      
-                                            [3] TAPE
-                                ====================================================================""" + RESET);
+            System.out.println("""
+                                                T Y P E
+                        Please Choose:
+                                [1] DVD
+                                [2] VCD
+                                [3] TAPE
+                    ====================================================================""" + RESET);
             System.out.print("Type: ");
             int choice = input.nextInt();
             input.nextLine();
@@ -290,11 +292,12 @@ public class Enterprise {
                 default ->
                     "Unknown";
             };
-            System.out.println(YELLOW + "Selected Type: " + RESET + type);
             System.out.print(YELLOW + "Input Title: " + RESET);
             String title = input.nextLine();
 
-            System.out.println(PURPLE + "\n=====================================================================\n                         C A T E G O R Y\n    Please Choose:\n            [1] Horror\n            [2] Scifi\n            [3] Drama\n            [4] Comedy\n            [5] Cartoons " + RESET);
+            System.out.println(PURPLE
+                    + "\n=====================================================================\n                         C A T E G O R Y\n    Please Choose:\n            [1] Horror\n            [2] Scifi\n            [3] Drama\n            [4] Comedy\n            [5] Cartoons "
+                    + RESET);
             System.out.print("Category: ");
             int choice2 = input.nextInt();
 
@@ -323,14 +326,15 @@ public class Enterprise {
                     "Unknown";
             };
 
-            System.out.println(YELLOW + "Selected Category: " + RESET + category);
             System.out.print(YELLOW + "Input Duration (mins): " + RESET);
             double minutes = input.nextDouble();
             input.nextLine();
             System.out.print(YELLOW + "Input Setting: " + RESET);
             String setting = input.nextLine();
 
-            System.out.println(PURPLE + "\n=====================================================================\n                    T R A N S A C T I O N  T Y P E\n    Please Choose:\n            [1] Rental\n            [2] Sales" + RESET);
+            System.out.println(PURPLE
+                    + "\n=====================================================================\n                    T R A N S A C T I O N  T Y P E\n    Please Choose:\n            [1] Rental\n            [2] Sales"
+                    + RESET);
             System.out.print("Transaction Type: ");
             int choice3 = input.nextInt();
 
@@ -351,47 +355,57 @@ public class Enterprise {
             System.out.print(YELLOW + "Input Price: " + RESET);
             double price = input.nextDouble();
             input.nextLine();
+
+            System.out.println("====== ORDER  SUMMARY ======");
+            System.out.println("Type:             " + type);
+            System.out.println("Title:            " + title);
+            System.out.println("Category:         " + category);
+            System.out.println("Duration:         " + minutes);
+            System.out.println("Setting:          " + setting);
+            System.out.println("Transaction type: " + transType);
+
             System.out.println(PURPLE + "==================================================================");
             System.out.print(GREEN + "Display another Y/N? " + RESET);
             response = input.nextLine();
         } while (response.equalsIgnoreCase("Y"));
 
         System.out.printf(BOLD_YELLOW + """
-        ┌─────────────────────────────────────────────────────────────────┐
-        │                                                                 │
-        │                   S Y S T E M    R E P O R T S                  │
-        │                                                                 │
-        │    [TRANSACTION SUMMARY]                   [GENRE BREAKDOWN]    │
-        │     For rent:      %d                        Horror:      %d      │
-        │     For sale:      %d                        Scifi:       %d      │
-        │                                             Drama:       %d      │
-        │                                             Comedy:      %d      │
-        │                                             Cartoons:    %d      │ 
-        │   [FORMAT TOTALS]                                               │
-        │     VCD:        %d                                               │
-        │     DVD:        %d                                               │
-        │     Tape:       %d                                               │ 
-        └─────────────────────────────────────────────────────────────────┘
-        """, rentalTotal, salesTotal, horrorTotal, scifiTotal, dramaTotal, comedyTotal, cartoonsTotal, vcdTotal, dvdTotal, tapeTotal);
+                ┌─────────────────────────────────────────────────────────────────┐
+                │                                                                 │
+                │                   S Y S T E M    R E P O R T S                  │
+                │                                                                 │
+                │    [TRANSACTION SUMMARY]                   [GENRE BREAKDOWN]    │
+                │     For rent:      %d                        Horror:      %d      │
+                │     For sale:      %d                        Scifi:       %d      │
+                │                                             Drama:       %d      │
+                │                                             Comedy:      %d      │
+                │                                             Cartoons:    %d      │
+                │   [FORMAT TOTALS]                                               │
+                │     VCD:        %d                                               │
+                │     DVD:        %d                                               │
+                │     Tape:       %d                                               │
+                └─────────────────────────────────────────────────────────────────┘
+                """, rentalTotal, horrorTotal, salesTotal, scifiTotal, dramaTotal, comedyTotal, cartoonsTotal, vcdTotal,
+                dvdTotal, tapeTotal);
 
         mainMenu();
     }
 
-    // --- MODULE 3: CLOTHING LINE ---
     public static void ClothingBrands() throws InterruptedException {
         String strBrand, strproduct, strColor, strSize;
         double dPrice;
         char strResponse = 'y';
 
         System.out.println(BOLD_CYAN + """
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                 │
-│               Welcome to Core-Style Clothing Line               │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘""" + RESET);
+                ┌─────────────────────────────────────────────────────────────────┐
+                │                                                                 │
+                │               Welcome to Core-Style Clothing Line               │
+                │                                                                 │
+                └─────────────────────────────────────────────────────────────────┘""" + RESET);
 
         do {
-            System.out.println(PURPLE + "\n============== R E G I S T R A T I O N    A R E A  ================" + RESET);
+            System.out
+                    .println(PURPLE + "\n============== R E G I S T R A T I O N    A R E A  ================" + RESET);
             System.out.print("Brand Name:      ");
             strBrand = input.nextLine();
             System.out.print("Product:         ");
@@ -411,22 +425,21 @@ public class Enterprise {
         mainMenu();
     }
 
-    // --- MODULE 4: QUIZZER ---
     public static void quizzerHome() throws InterruptedException {
         System.out.println(BOLD_CYAN + """
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                 │
-│               Welcome to Core-Quizzer Trivia Game               │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘""" + RESET);
+                ┌─────────────────────────────────────────────────────────────────┐
+                │                                                                 │
+                │               Welcome to Core-Quizzer Trivia Game               │
+                │                                                                 │
+                └─────────────────────────────────────────────────────────────────┘""" + RESET);
         System.out.println("""
-==================================================================
-                           MAIN MENU
-                    [1] Log In
-                    [2] Sign Up
-                    [0] Back to Main Menu
-==================================================================
-                """);
+                ==================================================================
+                                           MAIN MENU
+                                    [1] Log In
+                                    [2] Sign Up
+                                    [0] Back to Main Menu
+                ==================================================================
+                                """);
         System.out.print("Choice: ");
         int choice = input.nextInt();
         input.nextLine();
@@ -566,7 +579,8 @@ public class Enterprise {
                     System.out.println(BOLD_GREEN + "CORRECT!" + RESET);
                     score++;
                 } else {
-                    System.out.println(BOLD_RED + "INCORRECT! The correct answer is: " + answer[currentIndex].toUpperCase() + RESET);
+                    System.out.println(BOLD_RED + "INCORRECT! The correct answer is: "
+                            + answer[currentIndex].toUpperCase() + RESET);
                 }
 
                 if (qCount >= 30) {
@@ -574,7 +588,7 @@ public class Enterprise {
                     System.out.println("         QUIZ COMPLETE!");
                     System.out.println("Final Score: " + score + "/30");
                     System.out.println("============================================" + RESET);
-                    if (currentPlayer != null) {
+                    if (score > currentPlayer.getScore()) {
                         currentPlayer.setScore(score);
                     }
                     savePlayers();
@@ -621,18 +635,18 @@ public class Enterprise {
 
     public static boolean logIn() {
         System.out.println(BOLD_CYAN + """
-╔════════════════════════════════════════════════════════╗
-║                                                        ║
-║      ██╗      ██████╗  ██████╗     ██╗███╗   ██╗       ║
-║      ██║     ██╔═══██╗██╔════╝     ██║████╗  ██║       ║
-║      ██║     ██║   ██║██║  ███╗    ██║██╔██╗ ██║       ║
-║      ██║     ██║   ██║██║   ██║    ██║██║╚██╗██║       ║
-║      ███████╗╚██████╔╝╚██████╔╝    ██║██║ ╚████║       ║
-║      ╚══════╝ ╚═════╝  ╚═════╝     ╚═╝╚═╝  ╚═══╝       ║
-║                                                        ║
-║              AUTHORIZED PERSONNEL ONLY                 ║
-║                                                        ║
-╚════════════════════════════════════════════════════════╝""" + RESET);
+                ╔════════════════════════════════════════════════════════╗
+                ║                                                        ║
+                ║      ██╗      ██████╗  ██████╗     ██╗███╗   ██╗       ║
+                ║      ██║     ██╔═══██╗██╔════╝     ██║████╗  ██║       ║
+                ║      ██║     ██║   ██║██║  ███╗    ██║██╔██╗ ██║       ║
+                ║      ██║     ██║   ██║██║   ██║    ██║██║╚██╗██║       ║
+                ║      ███████╗╚██████╔╝╚██████╔╝    ██║██║ ╚████║       ║
+                ║      ╚══════╝ ╚═════╝  ╚═════╝     ╚═╝╚═╝  ╚═══╝       ║
+                ║                                                        ║
+                ║              AUTHORIZED PERSONNEL ONLY                 ║
+                ║                                                        ║
+                ╚════════════════════════════════════════════════════════╝""" + RESET);
         System.out.print(YELLOW + "Username:  " + RESET);
         String username = input.nextLine();
         System.out.print(YELLOW + "Password: " + RESET);
@@ -641,7 +655,8 @@ public class Enterprise {
         for (Player p : players) {
             if (p.getUsername().equals(username) && p.getPassword().equals(password)) {
                 currentPlayer = p;
-                System.out.println(GREEN + "Welcome back, " + username + "\nCurrent High Score: " + p.getScore() + RESET);
+                System.out
+                        .println(GREEN + "Welcome back, " + username + "\nCurrent High Score: " + p.getScore() + RESET);
                 return true;
             }
         }
@@ -651,18 +666,18 @@ public class Enterprise {
 
     public static void signUp() {
         System.out.println(BOLD_CYAN + """
-╔════════════════════════════════════════════════════════════════╗
-║                                                                ║
-║      ███████╗██╗ ██████╗ ███╗   ██╗    ██╗   ██╗██████╗        ║
-║      ██╔════╝██║██╔════╝ ████╗  ██║    ██║   ██║██╔══██╗       ║
-║      ███████╗██║██║  ███╗██╔██╗ ██║    ██║   ██║██████╔╝       ║
-║      ╚════██║██║██║   ██║██║╚██╗██║    ██║   ██║██╔═══╝        ║
-║      ███████║██║╚██████╔╝██║ ╚████║    ╚██████╔╝██║            ║
-║      ╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝     ╚═════╝ ╚═╝            ║
-║                                                                ║
-║                  CREATE YOUR ACCOUNT BELOW                     ║
-║                                                                ║
-╚════════════════════════════════════════════════════════════════╝""" + RESET);
+                ╔════════════════════════════════════════════════════════════════╗
+                ║                                                                ║
+                ║      ███████╗██╗ ██████╗ ███╗   ██╗    ██╗   ██╗██████╗        ║
+                ║      ██╔════╝██║██╔════╝ ████╗  ██║    ██║   ██║██╔══██╗       ║
+                ║      ███████╗██║██║  ███╗██╔██╗ ██║    ██║   ██║██████╔╝       ║
+                ║      ╚════██║██║██║   ██║██║╚██╗██║    ██║   ██║██╔═══╝        ║
+                ║      ███████║██║╚██████╔╝██║ ╚████║    ╚██████╔╝██║            ║
+                ║      ╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝     ╚═════╝ ╚═╝            ║
+                ║                                                                ║
+                ║                  CREATE YOUR ACCOUNT BELOW                     ║
+                ║                                                                ║
+                ╚════════════════════════════════════════════════════════════════╝""" + RESET);
         System.out.print(YELLOW + "Create Username: " + RESET);
         String username = input.nextLine();
         System.out.print(YELLOW + "Create Password: " + RESET);
@@ -677,15 +692,14 @@ public class Enterprise {
     public static void loadPlayers() {
         Gson gson = new Gson();
         try (FileReader reader = new FileReader(playersFile)) {
-            Type listType = new TypeToken<ArrayList<Player>>() {
-            }.getType();
+            Type listType = new TypeToken<ArrayList<Player>>() {}.getType();
             ArrayList<Player> loaded = gson.fromJson(reader, listType);
             if (loaded != null) {
                 players = loaded;
             }
-            System.out.println(GREEN + "Players successfully loaded");
+            System.out.println(GREEN + "Players successfully loaded" + RESET);
         } catch (IOException e) {
-            System.out.println(GREEN + "Creating new player database...");
+            System.out.println(GREEN + "Creating new player database..." + RESET);
         }
     }
 

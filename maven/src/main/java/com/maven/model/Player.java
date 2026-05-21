@@ -2,22 +2,22 @@ package com.maven.model;
 
 public class Player {
 
-    private String Username;
+    private String username;
     private String password;
     private int score;
 
-    public Player(String Username, String password, int score) {
-        this.Username = Username;
+    public Player(String username, String password, int score) {
+        this.username = username;
         this.password = password;
         this.score = score;
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
-    public void setUsername(String Username) {
-        this.Username = Username;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
