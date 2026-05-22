@@ -46,6 +46,9 @@ public class Enterprise {
     public static int currentIndex = -1;
     public static final String playersFile = "Players.json";
 
+    // Activity Log
+    public static StringBuilder logs = new StringBuilder();
+
     public static String[] questions = {
             "Sino ang pambansang bayani ng Pilipinas?",
             "Ano ang kabisera ng Pilipinas?",
@@ -56,7 +59,7 @@ public class Enterprise {
             "Ano ang pambansang bahay ng Pilipinas?",
             "Anong prutas ang tinaguriang King of Fruits at kilala sa amoy nito sa Davao?",
             "Ano ang pambansang bulaklak ng Pilipinas?",
-            "Ito ang pinakamaliit na isda sa buong mundo na matatagpuan sa Pilipinas.",
+            "Iito ang pinakamaliit na isda sa buong mundo na matatagpuan sa Pilipinas.",
             "Sino ang Ama ng Wikang Pambansa?",
             "Ano ang tawag sa pera ng Pilipinas?",
             "Anong tanyag na bulkang may perfect cone ang matatagpuan sa Albay?",
@@ -75,7 +78,7 @@ public class Enterprise {
             "Ano ang tawag sa mga Pilipinong nagtatrabaho sa ibang bansa?",
             "Anong pagkain ang sikat na gawa sa balat ng baboy na pinirito hanggang lumutong?",
             "Sino ang pambansang kamao ng Pilipinas pagdating sa boxing?",
-            "Anong relihiyon ang may pinakamalaking bilang ng tagasunod sa Pilipinas?",
+            "Anong relihiyon ang may pinakamalaking billing ng tagasunod sa Pilipinas?",
             "Ano ang tawag sa tradisyunal na kasuotan ng mga lalaking Pilipino?"
     };
 
@@ -128,7 +131,7 @@ public class Enterprise {
     public static void loading(String core) throws InterruptedException {
         System.out.println(BOLD_GREEN + "               Loading " + core);
         for (int i = 0; i < 69; i++) {
-            Thread.sleep(50);
+            Thread.sleep(10);
             System.out.print(".");
         }
         System.out.println();
@@ -148,8 +151,18 @@ public class Enterprise {
                                  [0] Exit
                 ====================================================================""" + RESET);
         System.out.print(BOLD_WHITE + "Enter choice: " + RESET);
-        int choice = input.nextInt();
-        input.nextLine();
+
+        int choice = -1;
+        if (input.hasNextInt()) {
+            choice = input.nextInt();
+            input.nextLine();
+        } else {
+            System.out.println(RED + "Please enter a valid number." + RESET);
+            input.nextLine();
+            mainMenu();
+            return;
+        }
+
         System.out.println(BOLD_CYAN + "====================================================================" + RESET);
         String core = "";
 
@@ -189,11 +202,12 @@ public class Enterprise {
         }
     }
 
-    // MINI MART
     public static void mart() throws InterruptedException {
         String strProdName, strAnotherP;
         char cCustomer = 'y', cAnotherP = 'y';
         double dQty, dBill, dPrice, dTotal, dPay, dChange = 0;
+
+        logs.append("========================= Core-Mart Session Begin =========================\n");
 
         do {
             dBill = 0;
@@ -204,58 +218,93 @@ public class Enterprise {
                     │                                                                 │
                     └─────────────────────────────────────────────────────────────────┘""" + RESET);
             do {
-                System.out.print("Product name:     ");
+                System.out.print("Product name:  ");
                 strProdName = input.nextLine();
-                System.out.print("Price:            ");
-                dPrice = input.nextDouble();
-                System.out.print("Quantity:         ");
-                dQty = input.nextDouble();
+
+                while (true) {
+                    System.out.print("Price:         ");
+                    if (input.hasNextDouble()) {
+                        dPrice = input.nextDouble();
+                        if (dPrice >= 0)
+                            break;
+                    }
+                    System.out.println(RED + "Invalid price! Try again." + RESET);
+                    input.nextLine();
+                }
+
+                while (true) {
+                    System.out.print("Quantity:      ");
+                    if (input.hasNextDouble()) {
+                        dQty = input.nextDouble();
+                        if (dQty > 0)
+                            break;
+                    }
+                    System.out.println(RED + "Invalid quantity! Try again." + RESET);
+                    input.nextLine();
+                }
                 input.nextLine();
 
                 dTotal = dQty * dPrice;
-                System.out.println("Total:            " + dTotal);
+                System.out.println("Total:         " + dTotal);
                 dBill += dTotal;
 
-                System.out.print(BOLD_GREEN + "--------> Another product Y/N? " + RESET);
+                logs.append(String.format("Item: %s | Price: %.2f | Qty: %.2f | Total: %.2f\n", strProdName, dPrice,
+                        dQty, dTotal));
+
+                System.out.print(BOLD_GREEN + ">>>> Another product Y/N? " + RESET);
                 strAnotherP = input.nextLine();
-                cAnotherP = strAnotherP.charAt(0);
+                cAnotherP = strAnotherP.isEmpty() ? 'n' : strAnotherP.charAt(0);
             } while (Character.toLowerCase(cAnotherP) == 'y');
 
             while (true) {
-                System.out.print("Bill:             " + dBill);
-                System.out.print("\nPayment:          ");
-                dPay = input.nextDouble();
-                input.nextLine();
-
-                if (dPay >= dBill) {
-                    dChange = dPay - dBill;
-                    System.out.println("Change:           " + dChange);
-                    System.out.println(BOLD_GREEN
-                            + "====================================================================" + RESET);
-                    System.out.println(BOLD_WHITE + "                   Thank you for shopping! Goodbye. " + RESET);
-                    System.out.println(BOLD_GREEN
-                            + "====================================================================" + RESET);
-                    break;
+                System.out.println("Bill:            " + dBill);
+                System.out.print("Payment:         ");
+                if (input.hasNextDouble()) {
+                    dPay = input.nextDouble();
+                    input.nextLine();
+                    if (dPay >= dBill) {
+                        dChange = dPay - dBill;
+                        System.out.println("Change:         " + dChange);
+                        System.out.println(BOLD_GREEN
+                                + "====================================================================" + RESET);
+                        System.out.println(BOLD_WHITE + "                   Thank you for shopping! Goodbye. " + RESET);
+                        System.out.println(BOLD_GREEN
+                                + "====================================================================" + RESET);
+                        logs.append(
+                                String.format("Total Bill: %.2f | Paid: %.2f | Change: %.2f\n", dBill, dPay, dChange));
+                        break;
+                    } else {
+                        System.out.println(BOLD_RED + "Money is not enough!" + RESET);
+                    }
                 } else {
-                    System.out.println(BOLD_RED + "Money is not enough!" + RESET);
+                    System.out.println(RED + "Invalid amount! Enter numbers only." + RESET);
+                    input.nextLine();
                 }
             }
 
-            System.out.print(BOLD_GREEN + "Another customer Y/N? " + RESET);
+            System.out.print(BOLD_GREEN + ">>>> Another customer Y/N? " + RESET);
             String strCustomer = input.nextLine();
             cCustomer = strCustomer.isEmpty() ? 'n' : strCustomer.charAt(0);
         } while (Character.toLowerCase(cCustomer) == 'y');
+        logs.append("========================= Core-Mart Session End =========================\n\n");
+        try (FileWriter logWriter = new FileWriter("record.txt", true)) {
+            logWriter.write(logs.toString());
+            logs.setLength(0);
+        } catch (IOException e) {
+            System.out.println(RED + "Error writing activity logs." + RESET);
+        }
 
         System.out.println(BOLD_GREEN + "Grocery program is terminating..." + RESET);
         mainMenu();
     }
 
-    // MOVIE REGISTRATION
     public static void movies() throws InterruptedException {
         String response;
         int dvdTotal = 0, vcdTotal = 0, tapeTotal = 0;
         int horrorTotal = 0, scifiTotal = 0, dramaTotal = 0, comedyTotal = 0, cartoonsTotal = 0;
         int rentalTotal = 0, salesTotal = 0;
+
+        logs.append("========================= Core-Flix Session Begin =========================\n");
 
         do {
             System.out.println(BOLD_CYAN + """
@@ -272,8 +321,18 @@ public class Enterprise {
                                 [2] VCD
                                 [3] TAPE
                     ====================================================================""" + RESET);
-            System.out.print("Type: ");
-            int choice = input.nextInt();
+
+            int choice = -1;
+            while (true) {
+                System.out.print(YELLOW + "Type: " + RESET);
+                if (input.hasNextInt()) {
+                    choice = input.nextInt();
+                    if (choice >= 1 && choice <= 3)
+                        break;
+                }
+                System.out.println(RED + "Invalid choice! Enter 1, 2, or 3." + RESET);
+                input.nextLine();
+            }
             input.nextLine();
 
             String type = switch (choice) {
@@ -289,17 +348,27 @@ public class Enterprise {
                     tapeTotal++;
                     yield "Tape";
                 }
-                default ->
-                    "Unknown";
+                default -> "Unknown";
             };
+
             System.out.print(YELLOW + "Input Title: " + RESET);
             String title = input.nextLine();
 
             System.out.println(PURPLE
-                    + "\n=====================================================================\n                         C A T E G O R Y\n    Please Choose:\n            [1] Horror\n            [2] Scifi\n            [3] Drama\n            [4] Comedy\n            [5] Cartoons "
-                    + RESET);
-            System.out.print("Category: ");
-            int choice2 = input.nextInt();
+                    + "\n=====================================================================\n                         C A T E G O R Y\n    Please Choose:\n            [1] Horror\n            [2] Scifi\n            [3] Drama\n            [4] Comedy\n            [5] Cartoons ");
+            System.out.println("====================================================================" + RESET);
+
+            int choice2 = -1;
+            while (true) {
+                System.out.print(YELLOW + "Category: " + RESET);
+                if (input.hasNextInt()) {
+                    choice2 = input.nextInt();
+                    if (choice2 >= 1 && choice2 <= 5)
+                        break;
+                }
+                System.out.println(RED + "Invalid choice! Enter between 1 and 5." + RESET);
+                input.nextLine();
+            }
 
             String category = switch (choice2) {
                 case 1 -> {
@@ -322,21 +391,36 @@ public class Enterprise {
                     cartoonsTotal++;
                     yield "Cartoons";
                 }
-                default ->
-                    "Unknown";
+                default -> "Unknown";
             };
 
-            System.out.print(YELLOW + "Input Duration (mins): " + RESET);
-            double minutes = input.nextDouble();
+            double minutes = -1;
+            while (true) {
+                System.out.print(YELLOW + "Input Duration (mins): " + RESET);
+                if (input.hasNextDouble()) {
+                    minutes = input.nextDouble();
+                    if (minutes > 0)
+                        break;
+                }
+                System.out.println(RED + "Invalid duration! Enter a valid value." + RESET);
+                input.nextLine();
+            }
             input.nextLine();
-            System.out.print(YELLOW + "Input Setting: " + RESET);
-            String setting = input.nextLine();
-
             System.out.println(PURPLE
-                    + "\n=====================================================================\n                    T R A N S A C T I O N  T Y P E\n    Please Choose:\n            [1] Rental\n            [2] Sales"
-                    + RESET);
-            System.out.print("Transaction Type: ");
-            int choice3 = input.nextInt();
+                    + "\n=====================================================================\n                    T R A N S A C T I O N  T Y P E\n    Please Choose:\n            [1] Rental\n            [2] Sales");
+            System.out.println("====================================================================" + RESET);
+
+            int choice3 = -1;
+            while (true) {
+                System.out.print(YELLOW + "Transaction Type: " + RESET);
+                if (input.hasNextInt()) {
+                    choice3 = input.nextInt();
+                    if (choice3 == 1 || choice3 == 2)
+                        break;
+                }
+                System.out.println(RED + "Invalid choice! Enter 1 or 2." + RESET);
+                input.nextLine();
+            }
 
             String transType = switch (choice3) {
                 case 1 -> {
@@ -347,25 +431,34 @@ public class Enterprise {
                     salesTotal++;
                     yield "Sales";
                 }
-                default ->
-                    "Unknown";
+                default -> "Unknown";
             };
 
-            System.out.println(YELLOW + "Transaction Type : " + RESET + transType);
-            System.out.print(YELLOW + "Input Price: " + RESET);
-            double price = input.nextDouble();
+            double price = -1;
+            while (true) {
+                System.out.print(YELLOW + "Input Price: " + RESET);
+                if (input.hasNextDouble()) {
+                    price = input.nextDouble();
+                    if (price >= 0)
+                        break;
+                }
+                System.out.println(RED + "Invalid price! Enter a valid value." + RESET);
+                input.nextLine();
+            }
             input.nextLine();
 
-            System.out.println("====== ORDER  SUMMARY ======");
-            System.out.println("Type:             " + type);
-            System.out.println("Title:            " + title);
-            System.out.println("Category:         " + category);
-            System.out.println("Duration:         " + minutes);
-            System.out.println("Setting:          " + setting);
-            System.out.println("Transaction type: " + transType);
+            System.out.println(GREEN + "\n=================== O R D E R   S U M M A R Y =================");
+            System.out.println("        Type:             " + type);
+            System.out.println("        Title:            " + title);
+            System.out.println("        Category:         " + category);
+            System.out.println("        Duration:         " + minutes);
+            System.out.println("        Transaction type: " + transType);
+            System.out.println("==================================================================" + RESET);
 
-            System.out.println(PURPLE + "==================================================================");
-            System.out.print(GREEN + "Display another Y/N? " + RESET);
+            logs.append(String.format("Added Movie: %s [%s] | Genre: %s | Mode: %s | Price: %.2f\n", title, type,
+                    category, transType, price));
+
+            System.out.print("Display another Y/N? " + RESET);
             response = input.nextLine();
         } while (response.equalsIgnoreCase("Y"));
 
@@ -387,6 +480,13 @@ public class Enterprise {
                 └─────────────────────────────────────────────────────────────────┘
                 """, rentalTotal, horrorTotal, salesTotal, scifiTotal, dramaTotal, comedyTotal, cartoonsTotal, vcdTotal,
                 dvdTotal, tapeTotal);
+        logs.append("========================= Core-Flix Session End =========================\n\n");
+        try (FileWriter logWriter = new FileWriter("record.txt", true)) {
+            logWriter.write(logs.toString());
+            logs.setLength(0);
+        } catch (IOException e) {
+            System.out.println(RED + "Error writing activity logs." + RESET);
+        }
 
         mainMenu();
     }
@@ -395,7 +495,7 @@ public class Enterprise {
         String strBrand, strproduct, strColor, strSize;
         double dPrice;
         char strResponse = 'y';
-
+        logs.append("========================= Core-Style Session Begin =========================\n");
         System.out.println(BOLD_CYAN + """
                 ┌─────────────────────────────────────────────────────────────────┐
                 │                                                                 │
@@ -414,14 +514,34 @@ public class Enterprise {
             strColor = input.nextLine();
             System.out.print("Size:            ");
             strSize = input.nextLine();
-            System.out.print("Price:           $");
-            dPrice = input.nextDouble();
+
+            while (true) {
+                System.out.print("Price:           $");
+                if (input.hasNextDouble()) {
+                    dPrice = input.nextDouble();
+                    if (dPrice >= 0)
+                        break;
+                }
+                System.out.println(RED + "Invalid price! Enter numbers only." + RESET);
+                input.nextLine();
+            }
             input.nextLine();
+
             registration++;
+            logs.append(String.format("Brand: %s | Product: %s | Color: %s | Size: %s | Price: $%.2f\n", strBrand,
+                    strproduct, strColor, strSize, dPrice));
             strResponse = anotherRegistration();
         } while (Character.toLowerCase(strResponse) == 'y');
 
         System.out.println(GREEN + numberOfRegistrations() + " items registered" + RESET);
+        logs.append("========================= Core-Style Session End =========================\n\n");
+        try (FileWriter logWriter = new FileWriter("record.txt", true)) {
+            logWriter.write(logs.toString());
+            logs.setLength(0);
+        } catch (IOException e) {
+            System.out.println(RED + "Error writing activity logs." + RESET);
+        }
+
         mainMenu();
     }
 
@@ -441,8 +561,17 @@ public class Enterprise {
                 ==================================================================
                                 """);
         System.out.print("Choice: ");
-        int choice = input.nextInt();
-        input.nextLine();
+
+        int choice = -1;
+        if (input.hasNextInt()) {
+            choice = input.nextInt();
+            input.nextLine();
+        } else {
+            System.out.println(RED + "Please enter a valid choice number." + RESET);
+            input.nextLine();
+            quizzerHome();
+            return;
+        }
 
         switch (choice) {
             case 1 -> {
@@ -471,8 +600,17 @@ public class Enterprise {
                                [1] PLAY               [2] EXIT TO MAIN
                 ==================================================================""");
         System.out.print("Choice: ");
-        int choice = input.nextInt();
-        input.nextLine();
+
+        int choice = -1;
+        if (input.hasNextInt()) {
+            choice = input.nextInt();
+            input.nextLine();
+        } else {
+            System.out.println(RED + "Please enter numbers only." + RESET);
+            input.nextLine();
+            quizGameMenu();
+            return;
+        }
 
         switch (choice) {
             case 1 -> {
@@ -514,7 +652,7 @@ public class Enterprise {
         System.out.println("  [1] Next        [2] Back          [3] Answer         [0] Exit   ");
         System.out.println("==================================================================" + RESET);
         System.out.print("  Choice: ");
-        String action = input.nextLine();
+        String action = input.nextLine().trim();
 
         switch (action) {
             case "1" -> {
@@ -555,20 +693,15 @@ public class Enterprise {
                 System.out.print("Answer: ");
                 String letter = input.nextLine().trim().toUpperCase();
                 String userAnswer = switch (letter) {
-                    case "A" ->
-                        choices[currentIndex][0];
-                    case "B" ->
-                        choices[currentIndex][1];
-                    case "C" ->
-                        choices[currentIndex][2];
-                    case "D" ->
-                        choices[currentIndex][3];
-                    default ->
-                        null;
+                    case "A" -> choices[currentIndex][0];
+                    case "B" -> choices[currentIndex][1];
+                    case "C" -> choices[currentIndex][2];
+                    case "D" -> choices[currentIndex][3];
+                    default -> null;
                 };
 
                 if (userAnswer == null) {
-                    System.out.println(RED + "Invalid letter.");
+                    System.out.println(RED + "Invalid letter. Choose A, B, C, or D." + RESET);
                     playQuiz();
                     return;
                 }
@@ -588,9 +721,19 @@ public class Enterprise {
                     System.out.println("         QUIZ COMPLETE!");
                     System.out.println("Final Score: " + score + "/30");
                     System.out.println("============================================" + RESET);
-                    if (score > currentPlayer.getScore()) {
+                    if (currentPlayer != null && score > currentPlayer.getScore()) {
                         currentPlayer.setScore(score);
                     }
+
+                    logs.append(String.format("Quizzer: %s | Completed Full Attempt | Final Score: %d/30\n",
+                            (currentPlayer != null ? currentPlayer.getUsername() : "Guest"), score));
+                    try (FileWriter logWriter = new FileWriter("record.txt", true)) {
+                        logWriter.write(logs.toString());
+                        logs.setLength(0);
+                    } catch (IOException e) {
+                        System.out.println(RED + "Error writing activity logs." + RESET);
+                    }
+
                     savePlayers();
                     mainMenu();
                 } else {
@@ -605,9 +748,20 @@ public class Enterprise {
             }
             case "0" -> {
                 System.out.println(YELLOW + "Total score: " + score + RESET);
-                if (currentPlayer != null) {
+                if (currentPlayer != null && score > currentPlayer.getScore()) {
                     currentPlayer.setScore(score);
                 }
+
+                logs.append(String.format(
+                        "Quizzer: %s | Score Achieved: %d | Exited at Question: #%d\n",
+                        (currentPlayer != null ? currentPlayer.getUsername() : "Guest"), score, qCount));
+                try (FileWriter logWriter = new FileWriter("record.txt", true)) {
+                    logWriter.write(logs.toString());
+                    logs.setLength(0);
+                } catch (IOException e) {
+                    System.out.println(RED + "Error writing activity logs." + RESET);
+                }
+
                 savePlayers();
                 mainMenu();
             }
@@ -618,7 +772,6 @@ public class Enterprise {
         }
     }
 
-    // --- HELPER METHODS ---
     public static void pickRandomQuestion() {
         Random random = new Random();
 
@@ -660,7 +813,7 @@ public class Enterprise {
                 return true;
             }
         }
-        System.out.println(RED + "User not found!");
+        System.out.println(RED + "User not found!" + RESET);
         return false;
     }
 
@@ -692,7 +845,8 @@ public class Enterprise {
     public static void loadPlayers() {
         Gson gson = new Gson();
         try (FileReader reader = new FileReader(playersFile)) {
-            Type listType = new TypeToken<ArrayList<Player>>() {}.getType();
+            Type listType = new TypeToken<ArrayList<Player>>() {
+            }.getType();
             ArrayList<Player> loaded = gson.fromJson(reader, listType);
             if (loaded != null) {
                 players = loaded;

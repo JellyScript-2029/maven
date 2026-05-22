@@ -1,0 +1,15 @@
+========================= Core-Mart Session Begin =========================
+Item: Chippy | Price: 13.00 | Qty: 5.00 | Total: 65.00
+Item: c2 | Price: 25.00 | Qty: 4.00 | Total: 100.00
+Total Bill: 165.00 | Paid: 200.00 | Change: 35.00
+========================= Core-Mart Session End =========================
+
+========================= Core-Flix Session Begin =========================
+Added Movie: Moana [DVD] | Genre: Cartoons | Mode: Rental | Price: 340.00
+========================= Core-Flix Session End =========================
+
+========================= Core-Style Session Begin =========================
+Brand: H&M | Product: T-shirt | Color: black | Size: M | Price: $350.00
+========================= Core-Style Session End =========================
+
+Quizzer: Jaydenn | Partial Playthrough Interrupted | Score Achieved: 5 | Exited at Question: #6
